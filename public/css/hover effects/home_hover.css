@@ -1,0 +1,12 @@
+#lay1btn:hover, #lay2btn:hover {
+    background-color: #329169;
+}
+
+.lay3btn:hover {
+    background-color: #1145a1;
+}
+
+.partnerimg:hover{
+    filter: grayscale(0%);
+    transition: 900ms;
+}

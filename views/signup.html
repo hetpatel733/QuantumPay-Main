@@ -1,0 +1,226 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumPay - Cryptocurrency Payment Solutions</title>
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- CSS data -->
+    <link rel="stylesheet" href="/navbar/navbar.css">
+    <link rel="stylesheet" href="/footer/footer.css">
+    <link rel="stylesheet" href="/css/signup.css">
+
+</head>
+
+<body>
+    <div class="container-fluid navbg x-bar" id="mainnav">
+        <div class="container mw-100">
+            <nav class="navbar navbar-expand-lg">
+                <!-- Brand -->
+                <a href="/"><img src="/images/Logo.webp" id="logoimg" height="40px;"></a>
+
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler collapsed" id="togglebtn" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavbar">
+                    <span class="toggler-icon top-bar"></span>
+                    <span class="toggler-icon middle-bar"></span>
+                    <span class="toggler-icon bottom-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link navpad" href="">Supported Cryptocurrencies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navpad" href="">Merchant Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navpad" id="removeon1100" href="/contact">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link navpad navbtneffect" href="/login">Login <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </li>
+                        <li class="nav-item navactive">
+                            <a class="nav-link navpad navbtneffect" href="/signup">Sign up <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="maincontainer">
+        <form method="POST">
+            <h1 id="registerhead">Register Now!</h1>
+            <div class="formelements" id="registrationtype">
+                <div class="grid-wrapper grid-col-auto">
+                    <label for="radio-card-1" class="radio-card">
+                        <input type="radio" name="registrationtype" value="B" id="radio-card-1" />
+                        <div class="card-content-wrapper">
+                            <span class="check-icon"></span>
+                            <div class="card-content">
+                                <img src="/images/business.png" alt="" height="220px" width="220px" />
+                                <h4>Business</h4>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label for="radio-card-2" class="radio-card">
+                        <input type="radio" name="registrationtype" value="P" id="radio-card-2" />
+                        <div class="card-content-wrapper">
+                            <span class="check-icon"></span>
+                            <div class="card-content">
+                                <img src="/images/personal.png" alt="" height="220px" width="220px" />
+                                <h4>Personal</h4>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+                <div class="displaynone" id="issueelement">
+                    <p id="issueelementp"></p>
+                </div>
+            </div>
+            <div id="formcontainer">
+                <div id="formelements">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" placeholder="Enter first name" name="fname" required>
+                </div>
+
+                <div id="formelements">
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" placeholder="Enter last name" name="lname" required>
+                </div>
+
+                <div id="formelements">
+                    <label for="uname">User name: </label><br>
+                    <input type="text" id="uname" placeholder="Enter user name" name="uname" required>
+                </div>
+
+                <div id="formelements">
+                    <label for="email">Email address:</label><br>
+                    <input type="email" placeholder="Enter Email" name="email" required>
+                </div>
+
+                <div id="formelements">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" placeholder="Enter password" name="password" required>
+                </div>
+
+                <div id="formelements">
+                    <label for="confirmpassword">Confirm Password:</label><br>
+                    <input type="password" id="cpassword" placeholder="Enter Confirm Password" name="cpassword"
+                        required>
+                </div>
+                <div id="validator-output"></div>
+            </div>
+            <div id="sbmtbtnparent">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+    <footer>
+        <div id="footernavigation">
+            <div class="footercol" id="footercol1">
+                <h2>Developer</h2>
+                <ul class="listremove">
+                    <li>
+                        Documentation
+                    </li>
+                    <li>
+                        Billing
+                    </li>
+                    <li>
+                        Supported Currencies
+                    </li>
+                </ul>
+            </div>
+            <div class="footercol" id="footercol2">
+                <h2>Resources</h2>
+                <ul class="listremove">
+                    <li>
+                        Merchant Tools
+                    </li>
+                    <li>
+                        FAQ
+                    </li>
+                    <li>
+                        Blog
+                    </li>
+                </ul>
+            </div>
+            <div class="footercol" id="footercol3">
+                <h2>Company</h2>
+                <ul class="listremove">
+                    <li>
+                        About Us
+                    </li>
+                    <li>
+                        Pricing
+                    </li>
+                    <li>
+                        Career
+                    </li>
+                    <li>
+                        Contact us
+                    </li>
+                </ul>
+            </div>
+            <div class="footercol" id="footercol4">
+                <h2>Legal</h2>
+                <ul class="listremove">
+                    <li>
+                        Restricted Jurisdictions
+                    </li>
+                    <li>
+                        User Agreement
+                    </li>
+                    <li>
+                        Privacy Policy
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="socialmedia">
+            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+            <a href="https://web.telegram.org" target="_blank"><i class="bi bi-telegram"></i></a>
+            <a href="https://discord.com" target="_blank"><i class="bi bi-discord"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://instgram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
+        <div id="footerlogo">
+            <img src="/images/logoimg.webp" alt="" id="logoimg">
+            <p>QuantumPay</p>
+        </div>
+        <p>© 2013-2023 QuantumPay, Inc. All Rights Reserved.</p>
+        <p>support@quantumpay.com</p>
+    </footer>
+
+    <!-- script starts here -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="/navbar/navbar.js"></script>
+    <script src="/js/signup.js"></script>
+
+</body>
+
+</html>

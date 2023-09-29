@@ -1,0 +1,122 @@
+html,
+body {
+    background-color: #f5f5f5;
+    height: fit-content;
+}
+
+.displaynone {
+    display: none;
+}
+
+#logoimgdiv {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1vw;
+}
+
+#logoimg {
+    height: 70px;
+    width: 240px;
+}
+
+#amntinusd {
+    display: flex;
+    justify-content: center;
+}
+
+#bgcoloramnt {
+    display: flex;
+    justify-content: center;
+    background-color: #b8e0f3;
+    width: fit-content;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+}
+
+#bgcoloramnt p {
+    font-size: 20px;
+}
+
+#orderiddiv {
+    display: flex;
+    justify-content: center;
+    background-color: #b8e0f3;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+#orderiddiv p {
+    padding: 0;
+    margin: 0;
+}
+
+#paymentinfo {
+    margin: 10px auto auto auto;
+    display: grid;
+    justify-content: center;
+}
+
+#unsuccess {
+    color: red;
+}
+
+#success {
+    color: green;
+    text-align: center;
+}
+
+#qrdiv {
+    margin-top: 40px;
+}
+
+#qr {
+    height: 250px;
+    width: 250px;
+    margin-left: 35px;
+}
+
+#addressdiv {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+#addressdiv input,
+#addressdiv button {
+    position: absolute;
+    background-color: transparent;
+    width: 250px;
+    outline: none;
+    box-shadow: none;
+    border: 0;
+    text-align: center;
+}
+
+#addressdiv button {
+    z-index: 1;
+}
+
+#issuediv {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#issuediv a,
+#issuediv p {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+#issuediv p {
+    font-size: 11px;
+}
+
+#issuediv a:hover {
+    text-decoration: underline;
+}

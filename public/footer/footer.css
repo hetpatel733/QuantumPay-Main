@@ -1,0 +1,130 @@
+footer {
+    background-color: #20263B;
+    color: white;
+    padding: 40px;
+    display: grid;
+}
+
+#footernavigation {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto;
+    margin: 40px auto 8vw auto;
+}
+
+footer h2 {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.footercol ul li {
+    font-size: 17px;
+
+}
+
+#footerlogo {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto 30px auto;
+    padding: 1px;
+}
+
+#footerlogo img {
+    height: 45px;
+    width: 50px;
+    border-radius: 4px;
+}
+
+#footerlogo p {
+    margin: 1px 0 0 10px;
+    font-size: 30px;
+}
+
+#socialmedia {
+    margin: auto;
+    width: fit-content;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+#socialmedia a {
+    color: white;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 0 10px 0 10px;
+}
+
+footer p {
+    margin: auto;
+    width: fit-content;
+    font-size: 12px;
+}
+
+/* Hovers */
+#socialmedia a:hover {
+    font-size: 40px;
+}
+
+@media screen and (max-width:1100px) {
+    .nav-item {
+        padding: 0.1vw;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #footernavigation {
+        grid-template-columns: auto auto;
+    }
+
+    .footercol ul {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    #footernavigation {
+        grid-template-columns: auto;
+        width: 100%;
+        justify-content: center;
+        row-gap: 20px;
+    }
+
+    #socialmedia a {
+        font-size: 5.9vw;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .x-bar {
+        padding: 0;
+    }
+
+    .navbar {
+        padding: 0.5rem 0 0.5rem 0;
+    }
+
+    footer {
+        padding: 22px;
+    }
+
+    footer p {
+        margin: auto;
+        width: fit-content;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    #logoimg {
+        height: 50px;
+        width: 160px;
+    }
+
+    footer p {
+        font-size: 8px;
+    }
+}
