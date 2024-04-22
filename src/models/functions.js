@@ -11,10 +11,9 @@ const addtotempdata = (tempdata, id, message) => {
 const removetotempdata = (tempdata, idtodel) => {
     tempdata = null;
 }
-async function Loginlog(Loginlogs) {
+async function Loginlog(Loginlogs, email, password) {
     var loginlog = new Loginlogs({
-        email: email,
-        password: password
+        email, password
     })
     var logsuccess = await loginlog.save();
 }
@@ -51,7 +50,7 @@ const paycompletedcall = async (payid) => {
     const paycompletedsave = await paycompleted.save();
 }
 // Big Handlers Functions
-const Loginfunction = async (req, res, app, tempdata) => {
+const Loginfunction = async (req, res, app) => {
     try {
         var { email, password } = req.body;
         var Businessemaillog = await Business.findOne({ email: email });
@@ -60,17 +59,15 @@ const Loginfunction = async (req, res, app, tempdata) => {
             var Businesspass = await Business.findOne({ email, password });
             var Personalpass = await Personal.findOne({ email, password });
             if (Businesspass) {
-                res.cookie('email', Businesspass.email);
-                res.cookie('password', Businesspass.password);
-                // console.log(req.cookies);
-                res.redirect('/panel');
-                Loginlog(Loginlogs);
+                Loginlog(Loginlogs, Businesspass.email, Businesspass.password);
+                req.session.email = Businesspass.email;
+                req.session.save();
+                res.redirect('/dashboard');
             } else if (Personalpass) {
-                res.cookie('email', Personalpass.email);
-                res.cookie('password', Personalpass.password);
-                // console.log(req.cookies);
-                res.redirect('/panel');
-                Loginlog(Loginlogs);
+                Loginlog(Loginlogs, Personalpass.email, Personalpass.password);
+                req.session.email = Personalpass.email;
+                req.session.save();
+                res.redirect('/dashboard');
             } else {
                 return res.status(401).redirect('/login?error=WrongloginPassword');
             }
@@ -80,6 +77,15 @@ const Loginfunction = async (req, res, app, tempdata) => {
     } catch (error) {
         console.log(error);
     }
+}
+// res.cookie('email', email);
+// res.cookie('password', password);
+// console.log(req.cookies);
+
+const Bdashboard = async (req, res, app) => {
+    const { logout } = req.query;
+    req.session.destroy();
+    res.redirect('/');
 }
 
 const Signupfunction = async (req, res, app) => {
@@ -108,13 +114,13 @@ const Signupfunction = async (req, res, app) => {
                     fname, lname, uname, email, password,
                 })
                 var registersuccess = await registerdata.save();
-                return res.status(401).redirect('/signup?error=SuccessSignup');
+                return res.status(401).redirect('/login?error=SuccessSignup');
             } else if (registrationtype = 'P') {
                 var registerdata = new Personal({
                     fname, lname, uname, email, password,
                 })
                 var registersuccess = await registerdata.save();
-                return res.status(401).redirect('/signup?error=SuccessSignup');
+                return res.status(401).redirect('/login?error=SuccessSignup');
             }
         }
 
@@ -183,8 +189,6 @@ const CoinselectFunction = async (req, res, app) => {
             symbolforapi = "TRX";
         } else { symbolforapi = "USDC" }
     }
-
-
 
     try {
         const priceres = await fetch(`https://api.binance.com/api/v3/ticker/price?symbol=${symbolforapi}USDT`);
@@ -334,4 +338,4 @@ const paymentcomplete = async (payid) => {
     return data;
 }
 
-module.exports = { Loginfunction, Signupfunction, Contactfunction, removetotempdata, apicheckFunction, CoinselectFunction, FinalpayFunction, paymentcomplete };
+module.exports = { Loginfunction, Signupfunction, Contactfunction, removetotempdata, apicheckFunction, CoinselectFunction, FinalpayFunction, paymentcomplete, Bdashboard };
