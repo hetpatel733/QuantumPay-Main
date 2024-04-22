@@ -8,7 +8,7 @@ require("./db/conn");
 
 const Functions = require("./models/functions");
 
-const { request, METHODS } = require('http');
+const session = require('express-session');
 const { paymentcompletschema } = require('./models/payment');
 const port = process.env.PORT || 8000;
 const static_path = path.join(__dirname, "../public");
@@ -21,8 +21,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.set("views", views_path);
 
+//Session Management
+app.use(session({
+    secret: 'Hetpatel@2776',
+    resave: true,
+    saveUninitialized: true,
+}));
+
 // ---------------------------------------------Pages
-app.get("/", (req, res) => { })
+
+app.get("/", (req, res) => {})
 
 app.get("/signup", (req, res) => {
     res.sendFile(path.join(__dirname, '../views', 'signup.html'));
@@ -36,11 +44,15 @@ app.get("/contact", (req, res) => {
     res.sendFile(path.join(__dirname, '../views', 'contact.html'));
 })
 
-app.get("/panel", (req, res) => {
-    res.send("Panel is here");
+app.get("/dashboard", (req, res) => {
+    if (req.session.email){
+        res.sendFile(path.join(__dirname, '../views', 'dashboard.html'));
+    }else {
+        res.redirect('/login');
+    }
 })
 
-// http://localhost:8000/payment?apikey=api_here
+// http://localhost:8000/payment?apikey=DFJGLOGJ5I69TKF9858I4989GIF
 app.get("/payment", (req, res) => {
     const apikey = req.query.apikey;
     // res.send({ apikey });
@@ -82,6 +94,11 @@ app.post("/contact", async (req, res) => {
         Functions.CoinselectFunction(req, res, app);
     })
 })
+
+app.post("/Bdashboard", async (req, res) => {
+    Functions.Bdashboard(req, res, app);
+})
+
 
 app.listen(port, () => {
     console.log(`http://localhost:${port}/`)
