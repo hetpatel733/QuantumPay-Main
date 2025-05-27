@@ -6,7 +6,7 @@ const Schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    uname: {
+    order_id: {
         type: String,
         required: true
     },
@@ -22,52 +22,53 @@ const Schema = new mongoose.Schema({
         type: String,
         required: true
     },
-    paymenttype: {
+    type: {
         type: String,
         require: true
     },
     amnt: {
         type: String,
         require: true
+    },
+    address: {
+        type: String,
+        require: true
+    },
+    status: {
+        type: String,
+        require: true
+    },
+    hash: {
+        type: String,
+        require: false
     }
 });
 
-const Schema2 = new mongoose.Schema({
-    payid: {
-        type: String,
-        required: true
-    },
-})
 
-const Schema3 = new mongoose.Schema({
-    uname: {
+const Schema2 = new mongoose.Schema({
+    order_id: {
         type: String,
         required: true
     },
-    BTC: {
+    email: {
         type: String,
         required: true
     },
-    SOL: {
+    api: {
         type: String,
-        required: true
-    },
-    EVM: {
-        type: String,
-        required: true
-    },
-    TRX: {
-        type: String,
-        required: true
+        require: true
     },
     amnt: {
+        type: String,
+        require: true
+    },
+    label: {
         type: String,
         require: true
     }
 })
 
 const paymentlogschema = mongoose.model("payment_logs", Schema);
-const paymentcompletschema = mongoose.model("completedpayment_logs", Schema2);
-const addressesschema = mongoose.model("addresses", Schema3);
+const ordersschema = mongoose.model("orders", Schema2);
 
-module.exports = { paymentlogschema, paymentcompletschema, addressesschema };
+module.exports = { paymentlogschema, ordersschema };

@@ -1,15 +1,14 @@
 {
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "cookieparser": "^0.1.0",
-    "express": "^4.19.2",
-    "express-session": "^1.18.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
     "fs": "^0.0.1-security",
-    "mongoose": "^7.6.11",
+    "mongoose": "^7.8.3",
+    "node-cron": "^4.0.7",
     "node-fetch": "^3.3.2",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.9"
   },
   "scripts": {
-    "dev": "nodemon src/app.js -e js,ejs,html,css"
+    "dev": "nodemon src/app.js -e js,ejs,html"
   }
 }

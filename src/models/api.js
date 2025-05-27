@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 
 const Schema = new mongoose.Schema({
-    uname: {
+    email: {
         type: String,
         required: true
     },
-    apikey: {
+    api: {
+        type: String,
+        required: true
+    },
+    evm: {
         type: String,
         required: true
     }
 });
 
-const apicheck = mongoose.model("account_apis", Schema);
+const apicheck = mongoose.model("account_api_addresses", Schema);
 
 module.exports = { apicheck };
