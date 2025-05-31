@@ -10,7 +10,6 @@
     "vercel": "^42.3.0"
   },
   "scripts": {
-    "build": "node src/app.js",
     "dev": "nodemon src/app.js -e js,ejs,html"
   }
 }
